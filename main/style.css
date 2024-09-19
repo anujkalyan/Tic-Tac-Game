@@ -1,109 +1,168 @@
-*{
+/* Reset default margins and paddings */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Navigation bar styling */
 nav {
     background-color: rgb(28, 9, 54);
     color: white;
-    height: 65px ;
+    height: 65px;
     font-size: 25px;
     display: flex;
     align-items: center;
-    padding: 0 12px;
-    
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-nav ul{
+nav ul {
     list-style-type: none;
 }
-.gamecontainer{
-display: flex;
-justify-content: center;
-margin-top: 50px ;
+
+/* Game container */
+.gamecontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
 }
 
-.container{
+/* Tic Tac Toe grid container */
+.container {
     display: grid;
     grid-template-rows: repeat(3, 10vw);
-    grid-template-columns: repeat(3,10vw);
-
+    grid-template-columns: repeat(3, 10vw);
+    gap: 5px;
 }
-.box{
+
+/* Grid boxes (cells) */
+.box {
     border: 2px solid black;
     font-size: 8vw;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.box:hover{
+.box:hover {
     background-color: rgb(245, 233, 248);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.TB{
-    margin-top: 15px;
-}
-
-.info{
-    font-size: 30px;
-    margin-top: 100px;
-}
-
-.gameinfo{
+/* Info section */
+.gameinfo {
     padding: 0 34px;
+    text-align: center;
+    margin-top: 50px;
+    text-align: center;
+    
 }
 
-.gameinfo h1{
+
+
+
+.info {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.gameinfo h1 {
     font-size: 2.5rem;
+    color: rgb(28, 9, 54);
+    margin-bottom: 20px;
 }
 
-.imgbox img{
+/* Image box transition */
+.imgbox img {
     width: 0;
-    transition: width is ease-in-out;
+    transition: width 0.5s ease-in-out;
 }
 
-.br-0{
+/* Borders removed for cleaner corners */
+.br-0 {
     border-right: 0;
 }
 
-.bl-0{
+.bl-0 {
     border-left: 0;
 }
 
-.bt-0{
+.bt-0 {
     border-top: 0;
 }
 
-.bb-0{
+.bb-0 {
     border-bottom: 0;
 }
 
-#reset{
-    
-    margin: 0 43px;
-    padding: 5px 28px;
+/* Reset button styling */
+#reset {
+    margin: 20px 0;
+    padding: 10px 30px;
     background-color: rgb(217, 180, 248);
-    border-radius: 6px;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 15px;
-    font-weight: bolder;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(28, 9, 54);
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (max-width: 950px)
-{
-    .gameContainer{
+#reset:hover {
+    background-color: rgb(190, 155, 220);
+}
+
+#reset:active {
+    background-color: rgb(164, 134, 197);
+    box-shadow: none;
+}
+
+/* Media query for mobile responsiveness */
+@media screen and (max-width: 950px) {
+    .gameContainer {
         flex-wrap: wrap;
+        margin-top: 30px;
     }
-    .gameInfo{
-        margin-top: 34px;
+
+    .gameInfo {
+        margin-top: 20px;
     }
-    .gameInfo h1{
-        font-size: 1.5rem;
+
+    .gameInfo h1 {
+        font-size: 1.8rem;
     }
-    .container { 
+
+    .info {
+        font-size: 24px;
+    }
+
+    /* Adjust the grid size for smaller screens */
+    .container {
         grid-template-rows: repeat(3, 20vw);
         grid-template-columns: repeat(3, 20vw);
     }
+
+    /* Increase box size for better tapping on touch devices */
+    .box {
+        font-size: 16vw;
+    }
+
+    #reset {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+}
+
+.gameInfo div {
+    margin-top: 10px; /* Adjusts spacing between info and button */
+    text-align: center; /* Keeps the reset button centered */
 }
