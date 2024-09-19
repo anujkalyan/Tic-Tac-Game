@@ -166,3 +166,136 @@ nav ul {
     margin-top: 10px; /* Adjusts spacing between info and button */
     text-align: center; /* Keeps the reset button centered */
 }
+
+
+
+/* Apply a gradient background */
+body {
+    background: linear-gradient(135deg, rgba(85, 85, 255, 0.3), rgba(255, 140, 255, 0.3));
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Navigation bar background improved */
+nav {
+    background-color: rgba(28, 9, 54, 0.9);
+    color: white;
+    height: 65px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Game container */
+.gamecontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Subtle background for game area */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust the box look with soft colors and shadows */
+.box {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    font-size: 8vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    background-color: rgba(245, 233, 248, 0.8);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Info section */
+.gameinfo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.info {
+    font-size: 30px;
+    margin-top: 20px;
+    color: rgb(85, 85, 255); /* Soft color for turn info */
+}
+
+.gameinfo h1 {
+    font-size: 2.5rem;
+    color: rgba(28, 9, 54, 0.9);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Reset button */
+#reset {
+    margin: 20px 0;
+    padding: 10px 30px;
+    background-color: rgba(217, 180, 248, 0.9);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(28, 9, 54);
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#reset:hover {
+    background-color: rgba(190, 155, 220, 0.9);
+}
+
+#reset:active {
+    background-color: rgba(164, 134, 197, 0.9);
+    box-shadow: none;
+}
+
+/* Media query for mobile responsiveness */
+@media screen and (max-width: 950px) {
+    .gamecontainer {
+        margin-top: 30px;
+    }
+
+    .gameinfo h1 {
+        font-size: 1.8rem;
+    }
+
+    .info {
+        font-size: 24px;
+    }
+
+    .container {
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+
+    .box {
+        font-size: 16vw;
+    }
+
+    #reset {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+}
+
+
+h1 {
+    padding-top: 4%;
+}
